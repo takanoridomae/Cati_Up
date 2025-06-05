@@ -1,10 +1,9 @@
 import { Suspense } from "react";
-import { sources, getArticlesWithSources } from "@/lib/data";
+import { sources } from "@/lib/data";
 import { ArticleList } from "@/components/article-list";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
-  const articles = getArticlesWithSources();
 
   return (
     <div className="container py-8">
@@ -33,7 +32,7 @@ export default function Home() {
             </div>
           }
         >
-          <ArticleList initialArticles={articles} sources={sources} />
+          <ArticleList sources={sources} />
         </Suspense>
       </section>
     </div>
